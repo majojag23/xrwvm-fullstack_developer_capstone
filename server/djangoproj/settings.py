@@ -31,10 +31,10 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'marianagar16-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai',
+    'marianagar16-8000.theianext-1-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai',
 ]
 CSRF_TRUSTED_ORIGINS = [
-    'https://marianagar16-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai',
+    'https://marianagar16-8000.theianext-1-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai',
 ]
 
 REST_FRAMEWORK = {
