@@ -63,7 +63,18 @@ const Register = () => {
     >
       <div className="header">
         <h1 className="text">Crear cuenta</h1>
-        <a href="/">Volver al inicio</a>
+        <a
+         href="/"
+         style={{
+           fontSize: "16px",
+           lineHeight: "1.5",
+           display: "inline-block",
+           marginBottom: "16px"
+         }}
+    >
+         Volver al inicio
+    </a>
+
       </div>
 
       <form onSubmit={register}>

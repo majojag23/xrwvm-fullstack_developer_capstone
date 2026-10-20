@@ -7,7 +7,31 @@
 <script>
 
 const logout = async (e) => {
-//Include the code for logout here.
+  if (e) e.preventDefault();
+
+  try {
+    const res = await fetch(
+      window.location.origin + "/djangoapp/logout",
+      { method: "GET" }
+    );
+
+    if (!res.ok) {
+      throw new Error("No se pudo cerrar la sesión");
+    }
+
+    const json = await res.json();
+
+    if (json.userName === "") {
+      const username = sessionStorage.getItem("username");
+      sessionStorage.removeItem("username");
+      alert("Logging out " + username + "...");
+      window.location.href = window.location.origin;
+    } else {
+      alert("The user could not be logged out.");
+    }
+  } catch (error) {
+    alert("No se pudo cerrar la sesión. Inténtalo de nuevo.");
+  }
 };
 
 let checkSession = ()=>{
@@ -16,7 +40,7 @@ let checkSession = ()=>{
   if (curr_user && curr_user !== "") {
     document.getElementById("loginlogout").innerHTML = 
     '<span class="homepage_links">' + curr_user +'</span>' +
-    '<a class="homepage_links" onclick="logout()" href="/">Logout</a>'
+    '<a class="homepage_links" onclick="logout(event)" href="/">Logout</a>'
   } else {
     document.getElementById("loginlogout").innerHTML = 
     '<a class="homepage_links" href="/login">Login</a>'+
