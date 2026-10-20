@@ -1,0 +1,2 @@
+curl -X GET "http://127.0.0.1:3030/fetchDealer/3"
+[{"_id":"6ad7fb4200a3ea59d3b0c293","id":3,"city":"Birmingham","state":"Alabama","address":"9477 Twin Pines Center","zip":"35285","lat":"33.5446","long":"-86.9292","short_name":"Sub-Ex","full_name":"Sub-Ex Car Dealership","__v":0}]
