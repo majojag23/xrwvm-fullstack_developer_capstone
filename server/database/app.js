@@ -98,8 +98,7 @@ app.post(
     let data;
 
     try {
-      data = Buffer.isBuffer(req.body)
-        ? JSON.parse(req.body.toString('utf8'))
+      data = Buffer.isBuffer(req.body) ? JSON.parse(req.body.toString('utf8'))
         : req.body;
     } catch (error) {
       return res.status(400).json({ error: 'Invalid JSON' });
